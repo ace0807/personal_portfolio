@@ -16,15 +16,17 @@
     }
 
     body {
-        color: #111;
+        color: #cacccc;
         width: 98%;
-        background-color: rgb(255, 228, 196, 0.3);
+        background-color: #0a0a23;
         font-size: large;
 
     }
 
     header {
-        background-color: rgb(255, 228, 196);
+       background-color: #f6bf6d;
+        background-image: linear-gradient(#fddf94, #fcb953);
+        border: 3px solid #fdba56;
         position: fixed;
         height: 5vh;
         width: 100%;
@@ -56,13 +58,13 @@
     }
 
     nav>ul>li {
-        color: rgb(172, 143, 143);
         display: block;
         margin: 1vh;
+        color: #0a0a23;
     }
 
     a:hover {
-        color: chocolate;
+        color: rgb(102, 108, 108);
 
     }
 
@@ -92,8 +94,8 @@
     .text {
         min-width: 0;
         width: 58%;
-        background-color: rgb(0, 0, 0, 0.05);
-        box-shadow: 3px 3px #afcfcf;
+        background-color: rgb(41, 37, 50);
+        box-shadow: 3px 3px #3e4646;
         margin-left: 4px;
         font-size: 1.1em;
         padding: 20px;
@@ -129,20 +131,28 @@
         flex-direction: row;
     }
 
-    .proj1,
-    .proj2,
-    .proj3,
-    .proj4,
-    .proj5 {
-        padding: 30px;
-        margin: 40px;
-        height: 60vh;
-        width: 45vh;
-        background-color: rgb(0, 0, 0, 0.05);
-        box-shadow: 3px 3px #afcfcf;
-        font-size: min(3vh, 5vw);
-        overflow-wrap: break-word;
-    }
+    .card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+
+    padding: 30px;
+    margin: 40px;
+    height: 60vh;
+    width: clamp(250px, 40%, 400px);
+    background-color: rgb(41, 37, 50);
+        box-shadow: 3px 3px #3e4646;
+    font-size: min(3vh, 5vw);
+    overflow-wrap: break-word;
+}
+.card:hover {
+    box-shadow: 4px 4px 10px rgba(198, 195, 195, 0.459);
+    transform: scale(1.01);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+
 
     #contact {
         display: flex;
@@ -156,6 +166,45 @@
         background-color: rgba(161, 164, 129, 0.1);
         margin: 10px;
     }
+
+@media (max-width: 768px) {
+    nav > ul {
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 0;
+  }
+  nav > ul > li {
+    margin: 0.5vh 1vw;
+    padding: 0.2em;
+    font-size: 0.9em;
+  }
+  header {
+    height: 4vh;
+  }
+  .about {
+    flex-direction: column;
+  }
+  .text, .image {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .card {
+    width: 90%;
+    height: fit-content;
+    margin: 20px auto;
+  }
+
+  #contact {
+    flex-direction: column;
+    align-items: center;
+  }
+  .cont {
+    margin: 10px auto;
+    width: 90%;
+    font-size: small;
+  }
+}
+
 </style>
 
 <body>
@@ -192,52 +241,49 @@
             </div>
         </div>
         <div id="projects">
-            <h2><i>Here are some of the projects I had fun building...( They're basic, I'm only a beginner😅):</i></h2>
-            <br>
+    <h2><i>Here are some of the projects I had fun building...( They're basic, I'm only a beginner😅):</i></h2>
+    <br>
 
-            <div class="proj">
-                <a href="https://ace0807.github.io/projects/proj1/">
-                    <div class="proj1">
-                        <h2>GIT commands</h2>
-                        <br><br>A list of some of the basic git commands for add, commit, push, init and a few
-                        useful terminal commands, a beginner's guide to git and GitHub!<br><br>
-                        <br><br> Made using HTML and CSS
-                    </div>
-                </a>
-                <a href="https://ace0807.github.io/projects/proj2/">
-                    <div class="proj2">
-                        <h2>Penguin🐧</h2>
-                        <br><br>A simple application of CSS properties such as transforms and animation
-                        : a waving penguin. <br><br>
-                        INSPO: <a href="https://www.freecodecamp.org/learn/">freeCodeCamp</a>
-                        <br><br> Made using HTML and CSS
-                    </div>
-                </a>
-                <a href="https://github.com/ace0807/projects/tree/main/proj3">
-                    <div class="proj3">
-                        <h2>Sudoku Solver</h2>
-                        <br><br>
-                        Python code for a sudoku solver using classes and objects. Wrote it while undergoing
-                        scientific computing in python course.<br><br>
-                        INSPO: <a href="https://www.freecodecamp.org/learn/">freeCodeCamp</a>
-                        <br><br> Python code
-                    </div>
-                </a>
-                <a href="https://ace0807.github.io/projects/proj4/">
-                    <div class="proj4">
-                        <h2>Dragon Repeller</h2> (My first JS project!)<br><br>
-                        Interactive game: People are stuck in town square. You see a store and a cave full
-                        of monsters. Find gold, buy weapons and health and defeat the dragon!<br><br>
-                        INSPO: <a href="https://www.freecodecamp.org/learn/">freeCodeCamp</a>
-                        <br><br> Made using HTML, CSS and JS
-                    </div>
-                </a>
-                <div class="proj5">
-                    <h2>And many more...</h2><br><br>
-                    Upcoming...
-                </div>
-            </div>
+    <div class="proj">
+        <a href="https://ace0807.github.io/projects/proj1/" class="card">
+            <h2>GIT Commands</h2>
+            <br><br>A list of some of the basic git commands for add, commit, push, init and a few
+            useful terminal commands, a beginner's guide to git and GitHub!<br><br>
+            <br><br> Made using HTML and CSS
+        </a>
+
+        <a href="https://ace0807.github.io/projects/proj2/" class="card">
+            <h2>Penguin🐧</h2>
+            <br><br>A simple application of CSS properties such as transforms and animation
+            : a waving penguin. <br><br>
+            INSPO: freeCodeCamp
+            <br><br> Made using HTML and CSS
+        </a>
+
+        <a href="https://github.com/ace0807/projects/tree/main/proj3" class="card">
+            <h2>Sudoku Solver</h2>
+            <br><br>
+            Python code for a sudoku solver using classes and objects. Wrote it while undergoing
+            scientific computing in python course.<br><br>
+            INSPO: freeCodeCamp
+            <br><br> Python code
+        </a>
+
+        <a href="https://ace0807.github.io/projects/proj4/" class="card">
+            <h2>Dragon Repeller</h2> (My first JS project!)<br><br>
+            Interactive game: Everyone is stuck in town square. There's a store and a cave full
+            of monsters. Find gold, buy weapons and health and defeat the dragon!<br><br>
+            INSPO: freeCodeCamp
+            <br><br> Made using HTML, CSS and JS
+        </a>
+
+        <div class="card">
+            <h2>And many more...</h2><br><br>
+            Upcoming...
         </div>
+    </div>
+</div>
+
         <div class="space"></div>
         <h3>Contact:</h3>
         <div id="contact">
@@ -246,7 +292,7 @@
             <div class="cont">E-mail:<br>chin***@gmail.com</div>
         </div>
     </main>
-
+</div>
 </body>
 
 </html>
