@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet'>
     <title>Chinmayee M</title>
 </head>
 <style>
@@ -16,17 +17,15 @@
     }
 
     body {
-        color: #cacccc;
+        color: #333333;
         width: 98%;
-        background-color: #0a0a23;
+        background-color:#e6f0ff;
         font-size: large;
 
     }
 
     header {
-       background-color: #f6bf6d;
-        background-image: linear-gradient(#fddf94, #fcb953);
-        border: 3px solid #fdba56;
+       background-color: #ffe4b3;
         position: fixed;
         height: 5vh;
         width: 100%;
@@ -42,16 +41,23 @@
         text-align: center;
         position: relative;
         font-size: min(7vh, 10vw);
+        color: #0a192f;
     }
 
     h1 {
         font-size: clamp(12px, 7vw, 35px);
+        color: #1a237e;
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
     }
 
     h2 {
         font-size: min(4vh, 6vw);
+        color: #003153;
     }
 
+    .h2{
+        color: #000000;
+    }
     nav>ul {
         display: flex;
         justify-content: space-evenly;
@@ -64,7 +70,7 @@
     }
 
     a:hover {
-        color: rgb(102, 108, 108);
+        color: rgb(60, 62, 62);
 
     }
 
@@ -94,13 +100,12 @@
     .text {
         min-width: 0;
         width: 58%;
-        background-color: rgb(41, 37, 50);
-        box-shadow: 3px 3px #3e4646;
         margin-left: 4px;
         font-size: 1.1em;
         padding: 20px;
-        font-size: clamp(12px, 4vw, 24px);
+        font-size: clamp(12px, 3vw, 24px);
         overflow-wrap: break-word;
+        font-family:'Times New Roman', Times, sans-serif;
     }
 
     .image {
@@ -131,17 +136,18 @@
         flex-direction: row;
     }
 
+.card, .text{
+
+    background-color: rgb(253, 246, 236,0.6);
+    box-shadow: 3px 3px rgb(112, 98, 98,0.5);
+}
     .card {
     display: block;
     text-decoration: none;
-    color: inherit;
-
     padding: 30px;
     margin: 40px;
     height: 60vh;
     width: clamp(250px, 40%, 400px);
-    background-color: rgb(41, 37, 50);
-        box-shadow: 3px 3px #3e4646;
     font-size: min(3vh, 5vw);
     overflow-wrap: break-word;
 }
@@ -163,8 +169,13 @@
     }
 
     .cont {
-        background-color: rgba(161, 164, 129, 0.1);
         margin: 10px;
+    }
+    .foot{
+        width: 100vw;
+        overflow: hidden;
+        color: #e6f0ff;
+        background-color: #003153;
     }
 
 @media (max-width: 768px) {
@@ -195,12 +206,10 @@
   }
 
   #contact {
-    flex-direction: column;
     align-items: center;
   }
   .cont {
     margin: 10px auto;
-    width: 90%;
     font-size: small;
   }
 }
@@ -222,7 +231,7 @@
     </div>
     <main>
         <div id="about">
-            <h1><i>&nbsp&nbspHi👋, I'm Chinmayee </i></h1><br>
+            <h1>&nbsp&nbspHi👋, I'm Chinmayee </h1><br>
             <div class="about">
                 <div class="text">
                     <p> I'm a passionate and curious learner, currently diving deep
@@ -241,19 +250,19 @@
             </div>
         </div>
         <div id="projects">
-    <h2><i>Here are some of the projects I had fun building...( They're basic, I'm only a beginner😅):</i></h2>
+    <h2 class="h2">Here are some of the projects I had fun building...( They're basic, I'm only a beginner😅):</h2>
     <br>
 
     <div class="proj">
         <a href="https://ace0807.github.io/projects/proj1/" class="card">
-            <h2>GIT Commands</h2>
+            <h2><u>GIT Commands</u></h2>
             <br><br>A list of some of the basic git commands for add, commit, push, init and a few
             useful terminal commands, a beginner's guide to git and GitHub!<br><br>
             <br><br> Made using HTML and CSS
         </a>
 
         <a href="https://ace0807.github.io/projects/proj2/" class="card">
-            <h2>Penguin🐧</h2>
+            <h2><u>Penguin</u>🐧</h2>
             <br><br>A simple application of CSS properties such as transforms and animation
             : a waving penguin. <br><br>
             INSPO: freeCodeCamp
@@ -261,7 +270,7 @@
         </a>
 
         <a href="https://github.com/ace0807/projects/tree/main/proj3" class="card">
-            <h2>Sudoku Solver</h2>
+            <h2><u>Sudoku Solver</u></h2>
             <br><br>
             Python code for a sudoku solver using classes and objects. Wrote it while undergoing
             scientific computing in python course.<br><br>
@@ -270,7 +279,7 @@
         </a>
 
         <a href="https://ace0807.github.io/projects/proj4/" class="card">
-            <h2>Dragon Repeller</h2> (My first JS project!)<br><br>
+            <h2><u>Dragon Repeller</u></h2> (My first JS project!)<br><br>
             Interactive game: Everyone is stuck in town square. There's a store and a cave full
             of monsters. Find gold, buy weapons and health and defeat the dragon!<br><br>
             INSPO: freeCodeCamp
@@ -285,11 +294,13 @@
 </div>
 
         <div class="space"></div>
+        <div class="foot">
         <h3>Contact:</h3>
         <div id="contact">
             <div class="cont">Chinmayee M<br>NITK'28 CSE<br></div>
             <div class="cont">GitHub:<br><a href="https://github.com/ace0807">@ace0807</a></div>
             <div class="cont">E-mail:<br>chin***@gmail.com</div>
+        </div>
         </div>
     </main>
 </div>
