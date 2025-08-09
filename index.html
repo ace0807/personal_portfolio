@@ -1,355 +1,402 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href='https://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet'>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Merriweather"
+      rel="stylesheet"
+    />
     <title>Portfolio website</title>
-</head>
-<style>
+  </head>
+  <style>
     * {
-        font-weight: lighter;
-        margin: 0px;
-        scrollbar-width: thin;
-        scroll-behavior: smooth;
-        box-sizing: border-box;
+      font-weight: lighter;
+      margin: 0px;
+      scrollbar-width: thin;
+      scroll-behavior: smooth;
+      box-sizing: border-box;
     }
 
     body {
-        color: #333333;
-        box-sizing: border-box;
-        background-color: #e6f0ff;
-        font-size: large;
-        overflow-x: hidden;
-
+      color: #333333;
+      box-sizing: border-box;
+      background-color: #e6f0ff;
+      font-size: large;
+      overflow-x: hidden;
     }
-    .wrapper{
-        box-sizing: border-box;
+    .wrapper {
+      box-sizing: border-box;
     }
 
     header {
-        background-color: #ffe4b3;
-        position: fixed;
-        height: 5vh;
-        width: 100%;
-        z-index: 1000;
-        font-family: Georgia, 'Times New Roman', Times, serif;
+      background-color: #ffe4b3;
+      position: fixed;
+      height: 5vh;
+      width: 100%;
+      z-index: 1000;
+      font-family: Georgia, "Times New Roman", Times, serif;
     }
 
     .welcome {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-        text-align: center;
-        position: relative;
-        font-size: min(7vh, 10vw);
-        color: #0a192f;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      position: relative;
+      font-size: min(7vh, 10vw);
+      color: #0a192f;
     }
 
     h1 {
-        font-size: clamp(12px, 7vw, 35px);
-        color: #1a237e;
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      font-size: clamp(12px, 7vw, 35px);
+      color: #1a237e;
+      font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
     }
 
     h2 {
-        font-size: min(4vh, 6vw);
-        color: #003153;
+      font-size: min(4vh, 6vw);
+      color: #003153;
     }
 
     .h2 {
-        color: #000000;
+      color: #000000;
     }
 
-    nav>ul {
-        display: flex;
-        justify-content: space-evenly;
+    nav > ul {
+      display: flex;
+      justify-content: space-evenly;
     }
 
-    nav>ul>li {
-        display: block;
-        margin: 1vh;
-        color: #0a0a23;
+    nav > ul > li {
+      display: block;
+      margin: 1vh;
+      color: #0a0a23;
     }
 
     a:hover {
-        color: rgb(60, 62, 62);
-
+      color: rgb(60, 62, 62);
     }
 
     a {
-        text-decoration: none;
-        color: inherit;
+      text-decoration: none;
+      color: inherit;
     }
 
     .space {
-        width: 100%;
-        height: 10vh;
+      width: 100%;
+      height: 10vh;
     }
 
     #about {
-        padding-top: 5vh;
+      padding-top: 5vh;
     }
 
     .about {
-        min-height: 50vh;
-        align-items: center;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        font-size: 3vh;
+      min-height: 50vh;
+      align-items: center;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      font-size: 3vh;
     }
 
     .text {
-        min-width: 0;
-        width: 58%;
-        margin-left: 4px;
-        padding: 20px;
-        font-size: clamp(12px, 3vw, 24px);
-        overflow-wrap: break-word;
-        font-family: 'Times New Roman', Times, sans-serif;
+      min-width: 0;
+      width: 58%;
+      margin-left: 4px;
+      padding: 20px;
+      font-size: clamp(12px, 3vw, 24px);
+      overflow-wrap: break-word;
+      font-family: "Times New Roman", Times, sans-serif;
     }
 
     .image {
-        min-width: 0;
-        width: 40%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+      min-width: 0;
+      width: 40%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     img {
-        max-width: 220px;
-        width: 100%;
-        height: auto;
+      max-width: 220px;
+      width: 100%;
+      height: auto;
     }
 
     #projects {
-        padding: 100px 20px;
+      padding: 100px 20px;
     }
 
     .proj {
-        padding-top: 50px;
-        font-size: large;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-wrap: wrap;
-        flex-direction: row;
+      padding-top: 50px;
+      font-size: large;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      flex-direction: row;
     }
 
     .card,
     .text {
-
-        background-color: rgb(253, 246, 236, 0.6);
-        box-shadow: 3px 3px rgb(112, 98, 98, 0.5);
+      background-color: rgb(253, 246, 236, 0.6);
+      box-shadow: 3px 3px rgb(112, 98, 98, 0.5);
     }
 
     .card {
-        display: block;
-        text-decoration: none;
-        padding: 30px;
-        margin: 40px;
-        height: 60vh;
-        width: clamp(250px, 40%, 400px);
-        font-size: min(3vh, 5vw);
-        overflow-wrap: break-word;
+      display: block;
+      text-decoration: none;
+      padding: 30px;
+      margin: 40px;
+      height: 60vh;
+      width: clamp(250px, 40%, 400px);
+      font-size: min(3vh, 5vw);
+      overflow-wrap: break-word;
     }
 
     .card:hover {
-        box-shadow: 4px 4px 10px rgba(198, 195, 195, 0.459);
-        transform: scale(1.01);
-        transition: all 0.3s ease-in-out;
-        cursor: pointer;
+      box-shadow: 4px 4px 10px rgba(198, 195, 195, 0.459);
+      transform: scale(1.01);
+      transition: all 0.3s ease-in-out;
+      cursor: pointer;
     }
-
-
 
     #contact {
-        display: flex;
-        flex-wrap: wrap;
-        font-size: large;
-        justify-content: space-around;
-        padding: 20px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      font-size: large;
+      justify-content: space-around;
+      padding: 20px 20px;
     }
     .cont {
-        margin: 10px;
-        text-align: center;
+      margin: 10px;
+      text-align: center;
     }
 
     .foot {
-        width: 100vw;
-        overflow: hidden;
-        color: #e6f0ff;
-        background-color: #003153;
+      width: 100vw;
+      overflow: hidden;
+      color: #e6f0ff;
+      background-color: #003153;
     }
-    #darkMode:checked ~.wrapper {
-            background-color: #0a0a0a;
-            color: #ffffff;
-        }
-        #darkMode:checked ~ .wrapper .text, 
-        #darkMode:checked ~ .wrapper .card,
-        #darkMode:checked ~ .wrapper .foot{
-            background-color: #2d2b2bbe;
-        }
-        #darkMode:checked ~ .wrapper h2,
-        #darkMode:checked ~ .wrapper h1,
-        #darkMode:checked ~ .wrapper .welcome{
-            color: #f9fbff;
-        }
-        #darkMode:checked ~ .wrapper a:hover{
-            color: #a5a3a3;
-        }
-        #darkMode:checked ~ .wrapper header{
-            background-color: #feac32;
-    background-image: linear-gradient(#fed772, #f9b755);
-    border: 3px solid #feac32;
-        }
-        #darkMode:checked ~ .wrapper header a:hover{
-            color: #003153;
-        }
+    #darkMode:checked ~ .wrapper {
+      background-color: #0a0a0a;
+      color: #ffffff;
+    }
+    #darkMode:checked ~ .wrapper .text,
+    #darkMode:checked ~ .wrapper .card,
+    #darkMode:checked ~ .wrapper .foot {
+      background-color: #2d2b2bbe;
+    }
+    #darkMode:checked ~ .wrapper h2,
+    #darkMode:checked ~ .wrapper h1,
+    #darkMode:checked ~ .wrapper .welcome {
+      color: #f9fbff;
+    }
+    #darkMode:checked ~ .wrapper a:hover {
+      color: #a5a3a3;
+    }
+    #darkMode:checked ~ .wrapper header {
+      background-color: #feac32;
+      background-image: linear-gradient(#fed772, #f9b755);
+      border: 3px solid #feac32;
+    }
+    #darkMode:checked ~ .wrapper header a:hover {
+      color: #003153;
+    }
 
     @media (max-width: 768px) {
-        nav>ul {
-            flex-direction: row;
-            justify-content: space-evenly;
-            padding: 0;
-        }
+      nav > ul {
+        flex-direction: row;
+        justify-content: space-evenly;
+        padding: 0;
+      }
 
-        nav>ul>li {
-            margin: 0.5vh 1vw;
-            padding: 0.2em;
-            font-size: 0.9em;
-        }
+      nav > ul > li {
+        margin: 0.5vh 1vw;
+        padding: 0.2em;
+        font-size: 0.9em;
+      }
 
-        header {
-            height: 4vh;
-        }
+      header {
+        height: 4vh;
+      }
 
-        .about {
-            flex-direction: column;
-        }
+      .about {
+        flex-direction: column;
+      }
 
-        .text,
-        .image {
-            width: 90%;
-            margin: 0 auto;
-        }
+      .text,
+      .image {
+        width: 90%;
+        margin: 0 auto;
+      }
 
-        .card {
-            width: 90%;
-            height: fit-content;
-            margin: 20px auto;
-        }
+      .card {
+        width: 90%;
+        height: fit-content;
+        margin: 20px auto;
+      }
 
-        #contact {
-            align-items: center;
-            justify-content: center;
-        }
+      #contact {
+        align-items: center;
+        justify-content: center;
+      }
 
-        .cont {
-            margin: 10px auto;
-            font-size: small;
-        }
-
-        
+      .cont {
+        margin: 10px auto;
+        font-size: small;
+      }
     }
-</style>
+  </style>
 
-<body>
-    <input type="checkbox" id="darkMode" hidden>
+  <body>
+    <input type="checkbox" id="darkMode" hidden />
     <div class="wrapper">
-    <header>
-            <nav>
-                <ul>
-                    <li><a href="#about">ABOUT</a></li>
-                    <li><a href="#projects">WORK</a></li>
-                    <li><a href="#contact">CONTACT</a></li>
-                    <li><label for="darkMode">🌗</label></li>
-                </ul>
-            </nav>
-        </header>
-        <div class="welcome">
-            WELCOME TO MY PORTFOLIO!
-        </div>
-        <main>
-            <div id="about">
-                <h1>&nbsp&nbspHi👋, I'm Chinmayee </h1><br>
-                <div class="about">
-                    <div class="text">
-                        <p> I'm a passionate and curious learner, currently diving deep
-                            into the world of web development and DSA. Whether it's learning
-                            to build sleek user interfaces, solving complex coding
-                            problems, or exploring the math behind algorithms, I love turning
-                            ideas into reality through code.<br><br>
-                            This portfolio showcases my journey- projects I've built, skills I'm
-                            sharpening, and challenges I'm embracing. Welcome to my digital space!</p>
-                    </div>
-                    <div class="image">
-                        <img src="https://pplx-res.cloudinary.com/image/upload/v1749577653/gpt4o_images/sjyycfusrynsn2yool1w.png"
-                            alt="hello!">
-                    </div>
-                    <div class="space"></div>
-                </div>
+      <header>
+        <nav>
+          <ul>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#projects">WORK</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+            <li><label for="darkMode">🌗</label></li>
+          </ul>
+        </nav>
+      </header>
+      <div class="welcome">WELCOME TO MY PORTFOLIO!</div>
+      <main>
+        <div id="about">
+          <h1>&nbsp&nbspHi👋, I'm Chinmayee</h1>
+          <br />
+          <div class="about">
+            <div class="text">
+              <p>
+                I'm a passionate and curious learner, currently diving deep into
+                the world of web development and DSA. Whether it's learning to
+                build sleek user interfaces, solving complex coding problems, or
+                exploring the math behind algorithms, I love turning ideas into
+                reality through code.<br /><br />
+                This portfolio showcases my journey- projects I've built, skills
+                I'm sharpening, and challenges I'm embracing. Welcome to my
+                digital space!
+              </p>
             </div>
-            <div id="projects">
-                <h2 class="h2">Here are some of the projects I had fun building...( They're basic, I'm only a
-                    beginner😅):</h2>
-                <br>
-
-                <div class="proj">
-                    <a href="https://ace0807.github.io/projects/proj1/" class="card">
-                        <h2><u>GIT Commands</u></h2>
-                        <br><br>A list of some of the basic git commands for add, commit, push, init and a few
-                        useful terminal commands, a beginner's guide to git and GitHub!<br><br>
-                        <br><br> Made using HTML and CSS
-                    </a>
-
-                    <a href="https://ace0807.github.io/projects/proj2/" class="card">
-                        <h2><u>Penguin</u>🐧</h2>
-                        <br><br>A simple application of CSS properties such as transforms and animation
-                        : a waving penguin. <br><br>
-                        INSPO: freeCodeCamp
-                        <br><br> Made using HTML and CSS
-                    </a>
-
-                    <a href="https://github.com/ace0807/projects/tree/main/proj3" class="card">
-                        <h2><u>Sudoku Solver</u></h2>
-                        <br><br>
-                        Python code for a sudoku solver using classes and objects. Wrote it while undergoing
-                        scientific computing in python course.<br><br>
-                        INSPO: freeCodeCamp
-                        <br><br> Python code
-                    </a>
-
-                    <a href="https://ace0807.github.io/projects/proj4/" class="card">
-                        <h2><u>Dragon Repeller</u></h2> (My first JS project!)<br><br>
-                        Interactive game: Everyone is stuck in town square. There's a store and a cave full
-                        of monsters. Find gold, buy weapons and health and defeat the dragon!<br><br>
-                        INSPO: freeCodeCamp
-                        <br><br> Made using HTML, CSS and JS
-                    </a>
-
-                    <div class="card">
-                        <h2>And many more...</h2><br><br>
-                        Upcoming...
-                    </div>
-                </div>
+            <div class="image">
+              <img
+                src="https://pplx-res.cloudinary.com/image/upload/v1749577653/gpt4o_images/sjyycfusrynsn2yool1w.png"
+                alt="hello!"
+              />
             </div>
-
             <div class="space"></div>
-            <footer class="foot" style="font-family: Arial, Helvetica, sans-serif; padding-top: 20px; padding-left: -20px;">
-                <h3 style="font-size:x-large; text-align: center;">Contact</h3>
-                <div id="contact">
-                    <div class="cont"><b>Chinmayee M</b><br><br>NITK'28 CSE<br></div>
-                    <div class="cont" style="padding-left: 35px;">GitHub<br><br><a href="https://github.com/ace0807">@ace0807</a></div>
-                    <div class="cont">E-mail<br><br>chin***@gmail.com</div>
-                </div>
-            </footer>
-        </main>
-    </div>
-</body>
+          </div>
+        </div>
+        <div id="projects">
+          <h2 class="h2">
+            Here are some of the projects I had fun building...( They're basic,
+            I'm only a beginner😅):
+          </h2>
+          <br />
 
+          <div class="proj">
+            <a href="https://ace0807.github.io/projects/proj1/" class="card">
+              <h2><u>GIT Commands</u></h2>
+              <br /><br />A list of some of the basic git commands for add,
+              commit, push, init and a few useful terminal commands, a
+              beginner's guide to git and GitHub!<br /><br />
+              <br /><br />
+              Made using HTML and CSS
+            </a>
+
+            <a href="https://ace0807.github.io/projects/proj2/" class="card">
+              <h2><u>Penguin</u>🐧</h2>
+              <br /><br />A simple application of CSS properties such as
+              transforms and animation : a waving penguin. <br /><br />
+              INSPO: freeCodeCamp
+              <br /><br />
+              Made using HTML and CSS
+            </a>
+
+            <a
+              href="https://github.com/ace0807/projects/tree/main/proj3"
+              class="card"
+            >
+              <h2><u>Sudoku Solver</u></h2>
+              <br /><br />
+              Python code for a sudoku solver using classes and objects. Wrote
+              it while undergoing scientific computing in python course.<br /><br />
+              INSPO: freeCodeCamp
+              <br /><br />
+              Python code
+            </a>
+
+            <a href="https://ace0807.github.io/projects/proj4/" class="card">
+              <h2><u>Dragon Repeller</u></h2>
+              (My first JS project!)<br /><br />
+              Interactive game: Everyone is stuck in town square. There's a
+              store and a cave full of monsters. Find gold, buy weapons and
+              health and defeat the dragon!<br /><br />
+              INSPO: freeCodeCamp
+              <br /><br />
+              Made using HTML, CSS and JS
+            </a>
+
+            <a
+              href="https://ace0807.github.io/projects/flappy%20bird/"
+              class="card"
+            >
+              <h2><u>Flappy Bird Clone🐥</u></h2>
+              <br /><br />
+              Clone of the famous flappy bird game built using phaser
+              library.<br /><br />
+              INSPO: codex
+              <br /><br />
+              Made using HTML and JS phaser
+            </a>
+
+            <a href="https://str-ai-ver.vercel.app/" class="card">
+              <h2><u>DSA chatbot🤖</u></h2>
+              (My first React project!)<br /><br />
+              A chatbot to help you with your DSA prep. Integrated with Gemini
+              AI.<br /><br />
+              INSPO: freeCodeCamp
+              <br /><br />
+              Made using ReactJS
+            </a>
+
+            <div class="card">
+              <h2>And many more...</h2>
+              <br /><br />
+              Upcoming...
+            </div>
+          </div>
+        </div>
+
+        <div class="space"></div>
+        <footer
+          class="foot"
+          style="
+            font-family: Arial, Helvetica, sans-serif;
+            padding-top: 20px;
+            padding-left: -20px;
+          "
+        >
+          <h3 style="font-size: x-large; text-align: center">Contact</h3>
+          <div id="contact">
+            <div class="cont">
+              <b>Chinmayee M</b><br /><br />NITK'28 CSE<br />
+            </div>
+            <div class="cont" style="padding-left: 35px">
+              GitHub<br /><br /><a href="https://github.com/ace0807"
+                >@ace0807</a
+              >
+            </div>
+            <div class="cont">E-mail<br /><br />chin***@gmail.com</div>
+          </div>
+        </footer>
+      </main>
+    </div>
+  </body>
 </html>
